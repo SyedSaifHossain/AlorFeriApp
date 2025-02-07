@@ -1,7 +1,13 @@
 package com.syedsaifhossain.alorferiuserapp.repository
 
-import com.syedsaifhossain.alorferiuserapp.NetworkResult
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import com.syedsaifhossain.alorferiuserapp.api.UserAPI.UserAPI
+import com.syedsaifhossain.alorferiuserapp.models.UserRequest
+import com.syedsaifhossain.alorferiuserapp.utils.NetworkResult
 import jakarta.inject.Inject
+import org.json.JSONObject
+
 
 class UserRepository @Inject constructor((private val userAPI: UserAPI) {
 
@@ -11,7 +17,7 @@ class UserRepository @Inject constructor((private val userAPI: UserAPI) {
 
     suspend fun registerUser(userRequest: UserRequest) {
         _userResponseLiveData.postValue(NetworkResult.Loading())
-        val response = userAPI.signup(userRequest)
+        val response = userAPI.signin(userRequest)
         handleResponse(response)
     }
 
@@ -22,6 +28,7 @@ class UserRepository @Inject constructor((private val userAPI: UserAPI) {
     }
 
     private fun handleResponse(response: Response<UserResponse>) {
+
         if (response.isSuccessful && response.body() != null) {
             _userResponseLiveData.postValue(NetworkResult.Success(response.body()!!))
         } else if (response.errorBody() != null) {

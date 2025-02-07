@@ -1,6 +1,6 @@
 package com.syedsaifhossain.alorferiuserapp.api.UserAPI
 
-interface UserApi {
+interface UserAPI {
 
     @POST("/users/signin")
 

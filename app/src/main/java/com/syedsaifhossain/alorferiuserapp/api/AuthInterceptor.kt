@@ -4,7 +4,7 @@ import jakarta.inject.Inject
 import okhttp3.Interceptor
 import okhttp3.Response
 
-class AuthInteceptor @Inject constructor():Interceptor{
+class AuthInterceptor @Inject constructor():Interceptor{
 
     @Inject
     lateinit var tokenManager: TokenManager
