@@ -1,6 +1,7 @@
 package com.syedsaifhossain.alorferiuserapp.repository
 
 import com.syedsaifhossain.alorferiuserapp.NetworkResult
+import jakarta.inject.Inject
 
 class UserRepository @Inject constructor((private val userAPI: UserAPI) {
 

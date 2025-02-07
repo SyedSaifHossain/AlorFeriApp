@@ -77,7 +77,7 @@ class LoginFragment : Fragment() {
             when (it) {
                 is NetworkResult.Success -> {
                     tokenManager.saveToken(it.data!!.token)
-                    findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
+                    findNavController().navigate(R.id.action_login_to_main)
                 }
                 is NetworkResult.Error -> {
                     showValidationErrors(it.message.toString())

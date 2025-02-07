@@ -9,5 +9,14 @@
         android:id="@+id/loginFragment"
         android:name="com.syedsaifhossain.alorferiuserapp.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_main"
+            app:destination="@id/mainFragment5" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment5"
+        android:name="com.syedsaifhossain.alorferiuserapp.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
 </navigation>
