@@ -9,7 +9,7 @@ import jakarta.inject.Inject
 import org.json.JSONObject
 
 
-class UserRepository @Inject constructor((private val userAPI: UserAPI) {
+class UserRepository @Inject constructor(private val userAPI: UserAPI) {
 
     private val _userResponseLiveData = MutableLiveData<NetworkResult<UserResponse>>()
     val userResponseLiveData: LiveData<NetworkResult<UserResponse>>
